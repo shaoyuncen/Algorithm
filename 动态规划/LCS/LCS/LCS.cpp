@@ -23,7 +23,7 @@ public:
 		col = A.length() + 1;
 		row = B.length() + 1;
 	}
-	void LengthOfLCS()
+	void LCS::LengthOfLCS()
 	{//set array c->record lengthOfLCS, array b->search specific LCS
 		c = new int*[row];
 		for (int temp = 0; temp < row; temp++) {
@@ -71,7 +71,7 @@ public:
 		}
 
 	}
-	void searchLCS()
+	void LCS::searchLCS()
 	{
 		LengthOfLCS();
 		int temp = 0;
