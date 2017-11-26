@@ -138,7 +138,7 @@ public:
 	}
 };
 
-int main()
+int main(int argc, int *argv)
 {
 	string A = "BCDACB";
 	string B = "ABADCB";
@@ -148,6 +148,6 @@ int main()
 
 	lcs.print();
 
-
+	return 0;
 }
 
