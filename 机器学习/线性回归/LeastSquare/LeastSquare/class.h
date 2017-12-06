@@ -46,6 +46,7 @@ struct MyPoint
 		std::cout << "x = " << x << "  y = " << y << "  z = " << z << std::endl;
 	}
 };
+
 class LeastSquare {
 private:
 	double k, b;
@@ -115,4 +116,6 @@ void LeastSquare::filter(const vector<MyPoint> &ptr, vector<MyPoint> &outlier)
 	}
 
 }
+
+
 
