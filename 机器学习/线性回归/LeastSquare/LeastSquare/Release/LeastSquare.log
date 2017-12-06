@@ -1,0 +1,8 @@
+﻿  LeastSquare.cpp
+c:\users\shaoyuncen\documents\visual studio 2015\projects\leastsquare\leastsquare\class.h(108): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码
+  2 of 260 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    31 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  LeastSquare.vcxproj -> C:\Users\shaoyuncen\Documents\Visual Studio 2015\Projects\LeastSquare\Release\LeastSquare.exe
