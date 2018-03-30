@@ -24,29 +24,29 @@ public:
 	BTreeNode* createBTree2();
 	void BTree::createBTree2(BTreeNode* root,int index2);
 
-	//Ç°Ğò±éÀú(µİ¹é)  
+	//å‰åºéå†(é€’å½’)  
 	void BTree::preOrder(BTreeNode* root);
-	//Ç°Ğò±éÀú(·Çµİ¹é)  
+	//å‰åºéå†(éé€’å½’)  
 	void BTree::NotRePreOrder();
 
-	//ÖĞĞò±éÀú(µİ¹é)  
+	//ä¸­åºéå†(é€’å½’)  
 	void BTree::inOrder(BTreeNode* root);
-	//ÖĞĞò±éÀú(·Çµİ¹é)  
+	//ä¸­åºéå†(éé€’å½’)  
 	void BTree::NotReInOrder();
 
-	//ºóĞò±éÀú(µİ¹é)  
+	//ååºéå†(é€’å½’)  
 	void BTree::postOrder(BTreeNode* root);
-	//ºóĞò±éÀú(·Çµİ¹é)  
+	//ååºéå†(éé€’å½’)  
 	void BTree::NotRePostOrder();
 
-	//Çó½áµã¸öÊı  
+	//æ±‚ç»“ç‚¹ä¸ªæ•°  
 	int BTree::BTreeSize();
-	//ÇóÒ¶×Ó½áµã¸öÊı  
+	//æ±‚å¶å­ç»“ç‚¹ä¸ªæ•°  
 	int BTree::BTreeLeaves();
 
-	//ÇóÊ÷¸ß  
+	//æ±‚æ ‘é«˜  
 	int BTree::DFS_Height(BTreeNode *root);
-	//²ã´Î·¨ÇóÊ÷¸ß  
+	//å±‚æ¬¡æ³•æ±‚æ ‘é«˜  
 	int BTree::BFS_Height(BTreeNode *root);
 
 //private:
@@ -55,7 +55,7 @@ public:
 	unsigned int index;
 };
 
-//½¨Á¢¶ş²æÊ÷µÄËã·¨ ²ã´Î±éÀú ·Çµİ¹é  
+//å»ºç«‹äºŒå‰æ ‘çš„ç®—æ³• å±‚æ¬¡éå† éé€’å½’  
 BTreeNode* BTree::createBTree()
 {
 	BTreeNode* temp = NULL;
@@ -86,7 +86,7 @@ BTreeNode* BTree::createBTree()
 	}
 	return temp;
 }
-//½¨Á¢¶ş²æÊ÷µÄËã·¨ ²ã´Î±éÀú µİ¹é  
+//å»ºç«‹äºŒå‰æ ‘çš„ç®—æ³• å±‚æ¬¡éå† é€’å½’  
 BTreeNode* BTree::createBTree2() {
 	BTreeNode* temp=new BTreeNode;
 	createBTree2(temp, 0);
@@ -111,7 +111,7 @@ void BTree::createBTree2(BTreeNode* root,int index2) {
 		}
 	}
 }
-//µİ¹é·¨
+//é€’å½’æ³•
 void BTree::preOrder(BTreeNode* root) {
 	if (root == NULL)
 		return;
