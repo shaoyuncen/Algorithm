@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include <stack>
 #include <queue>
@@ -15,39 +14,39 @@ struct BTreeNode
 class BTree
 {
 public:
-	BTree::BTree(vector<int> &_nums) {
+	BTree(vector<int> &_nums) {
 		nums = _nums;
 		root = NULL;
 		index = 0;
 	}
 	BTreeNode* createBTree();
 	BTreeNode* createBTree2();
-	void BTree::createBTree2(BTreeNode* root,int index2);
+	void createBTree2(BTreeNode* root,int index2);
 
 	//前序遍历(递归)  
-	void BTree::preOrder(BTreeNode* root);
+	void preOrder(BTreeNode* root);
 	//前序遍历(非递归)  
-	void BTree::NotRePreOrder();
+	void NotRePreOrder();
 
 	//中序遍历(递归)  
-	void BTree::inOrder(BTreeNode* root);
+	void inOrder(BTreeNode* root);
 	//中序遍历(非递归)  
-	void BTree::NotReInOrder();
+	void NotReInOrder();
 
 	//后序遍历(递归)  
-	void BTree::postOrder(BTreeNode* root);
+	void postOrder(BTreeNode* root);
 	//后序遍历(非递归)  
-	void BTree::NotRePostOrder();
+	void NotRePostOrder();
 
 	//求结点个数  
-	int BTree::BTreeSize();
+	int BTreeSize();
 	//求叶子结点个数  
-	int BTree::BTreeLeaves();
+	int BTreeLeaves();
 
 	//求树高  
-	int BTree::DFS_Height(BTreeNode *root);
+	int DFS_Height(BTreeNode *root);
 	//层次法求树高  
-	int BTree::BFS_Height(BTreeNode *root);
+	int BFS_Height(BTreeNode *root);
 
 //private:
 	BTreeNode* root;
