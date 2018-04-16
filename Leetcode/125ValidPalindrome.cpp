@@ -2,42 +2,29 @@
 using namespace std;
 bool isPalindrome(string s)
 {
-    if (s.empty())
-        return true;
-    int size = s.size();
-    int i = 0, j = size - 1;
-    while (i < j)
+    int start = 0, end = s.length() - 1;
+    while (start < end)
     {
-        if (s[i] >= 'A' && s[i] <= 'Z')
-        {
-            char temp_i = s[i] - ('A' - 'a');
-            s[i] = temp_i;
-        }
-        if (s[j] >= 'A' && s[j] <= 'Z')
-        {
-            char temp_j = s[j] - ('A' - 'a');
-            s[j] = temp_j;
-        }
-        while (s[i] > 'z' || s[i] < 'a')
-            i++;
-        while (s[j] > 'z' || s[j] < 'a')
-            j--;
-        if (s[i] != s[j])
-            return false;
+        if (!isalnum(s[start]))
+            start++;
+        else if (!isalnum(s[end]))
+            end--;
         else
         {
-            i++;
-            j--;
+            if (tolower(s[start++]) != tolower(s[end--]))
+                return false;
         }
     }
     return true;
 }
 int main()
 {
-    string s = "0P";
+    string s = "Live on evasions ? No, I save no evil.";
+    string s2 = ",.";
     if(isPalindrome(s))
         cout << "True" << endl;
     else
         cout << "False" << endl;
+ 
     return 0;
 }
