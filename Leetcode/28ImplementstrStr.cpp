@@ -7,15 +7,15 @@ int strStr(string haystack, string needle)
     int i, j = 0;
     for (i = 0; i < haystack.size(); i++)
     {
-        if (haystack[i] == needle[j])
-            j++;
+        if (haystack[i] == needle[j]) //找与needle中第一个字母相等的地方（i）
+            j++;//相等就j++
         else
         {
             i -= j;
             j = 0;
-        }
-        if (j == needle.size())
-            return i - j + 1;
+        }//不等就让i后退，比较了几格退几格，并且把j置零
+        if (j == needle.size()) //当匹配完成后
+            return i - j + 1; // j是比较了的格数，那么i+1 -j则是一开始的位置
     }
     return -1;
 }
