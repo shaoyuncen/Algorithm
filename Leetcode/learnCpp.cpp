@@ -1,4 +1,6 @@
 #include <iostream>
+#include <set>
+#include <vector>
 using namespace std;
 int main()
 {
@@ -7,6 +9,8 @@ int main()
     cout << *pi << endl;
     *pi = *pi * *pi;
     cout << *pi << ' ' << i << endl;
-
+    int x;
+    cin >> x;
+    cout << "x = " << x << endl;
     return 0;
 }
