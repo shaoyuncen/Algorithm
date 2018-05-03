@@ -7,6 +7,6 @@ int main()
     cout << *pi << endl;
     *pi = *pi * *pi;
     cout << *pi << ' ' << i << endl;
-
+    cout<<"Some changes"<<endl;
     return 0;
 }
