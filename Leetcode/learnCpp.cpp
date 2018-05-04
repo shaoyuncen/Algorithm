@@ -9,6 +9,6 @@ int main()
     cout << *pi << endl;
     *pi = *pi * *pi;
     cout << *pi << ' ' << i << endl;
-
+    
     return 0;
 }
