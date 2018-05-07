@@ -1,4 +1,11 @@
 #include <iostream>
+#include <math.h>
+#ifndef INT_MIN
+#define INT_MIN -pow(2, 31)
+#endif
+#ifndef INT_MAX
+#define INT_MAX pow(2, 31) - 1
+#endif
 using namespace std;
 int reverse(int x)
 {
