@@ -46,6 +46,6 @@ int main()
 {
     string s1 = "2147483648";
     cout << myAtoi(s1) << endl;
-    
+
     return 0;
 }
