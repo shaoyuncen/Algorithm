@@ -1,38 +1,40 @@
 #include <iostream>
 #include <vector>
+#include <map>
 using namespace std;
-struct Point{
+
+//Definition for a point.
+struct Point {
     int x;
     int y;
-    Point() : x(0), y(0){} 
+    Point() : x(0), y(0) {}
     Point(int a, int b) : x(a), y(b) {}
 };
-void compute(const vector<Point> &ptr, double &k, double &b)
-{
-    double SumXi = 0.0;
-    double SumYi = 0.0;
-    double SumXi_2 = 0.0;
-    double SumXiYi = 0.0;
-    int number = int(ptr.size()); 
-    for (int i = 0; i < number; i++)
+struct Comp
+{ // comparator for key (slope) in map
+    bool operator()(const Point &a, const Point &b)
     {
-        SumXi += ptr[i].x;
-        SumYi += ptr[i].y;
-        SumXi_2 += ptr[i].x * ptr[i].x;
-        SumXiYi += ptr[i].x * ptr[i].y;
+        int64_t diff = (int64_t)a.x * b.y - (int64_t)a.y * b.x; // convert to 64bit int for int overflow
+        return (int64_t)a.y * b.y > 0 ? diff > 0 : diff < 0;
     }
-    double temp = (number * SumXi_2 - SumXi * SumXi); 
-    k = (number * SumXiYi - SumXi * SumYi) / temp;
-    b = (SumXi_2 * SumYi - SumXi * SumXiYi) / temp;
+};
+int maxPoints(vector<Point> &pts)
+{
+    int maxPts = 0;
+    for (auto &i : pts)
+    {
+        map<Point, int, Comp> count;
+        int dup = 0;
+        for (auto &j : pts)
+        {
+            int curMax = (i.x == j.x && i.y == j.y) ? ++dup : ++count[Point(i.x - j.x, i.y - j.y)] + dup;
+            maxPts = max(maxPts, curMax);
+        }
+    }
+    return maxPts;
 }
 
-int maxPoints(vector<Point> &points)
-{
-    double k = 0, b = 0;
-    compute(points, k, b);
-    cout << "y = " << k << " x + " << b << endl;
-    return -1;
-}
+
 int main()
 {
     Point pt1(1,4);
