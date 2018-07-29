@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     MyClass my(10);
-    int a = my.getA();
+    auto a = my.getA();
     cout << a << endl;
     return 0;
 }
