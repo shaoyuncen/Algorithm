@@ -1,11 +1,40 @@
+// unordered_map::erase
 #include <iostream>
+#include <string>
 #include <vector>
+#include <memory.h>
 using namespace std;
 
-int main(int argc, char const *argv[])
+void countPrimes(int n)
 {
-    vector<int> nums = {1,2,3,4,5};
-    for(int num : nums)
-        cout<<num<<endl;
+    bool arrays[n+1];
+    memset(arrays,true,sizeof(arrays));
+    int count = 0;
+    //筛选
+    for (int i = 2; i < n; i++)
+    {
+        if (arrays[i] == false)
+            continue;
+        else if(arrays[i] == true)
+        {
+            cout<<i<<endl;
+            count++;
+            int temp = n - 1;
+            while (temp > i)
+            {
+                if (temp % i == 0)
+                    arrays[temp] = false;
+                temp--;
+            }
+        }
+    }
+
+    cout << "result： " << count << endl;
+}
+int main()
+{
+
+    // countPrimes(10);
+
     return 0;
 }
