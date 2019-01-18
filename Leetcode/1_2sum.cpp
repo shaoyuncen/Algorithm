@@ -22,3 +22,8 @@ vector<int> Two_sum(vector<int> &nums, int target)
     map.clear();
     return pair;
 }
+int main()
+{
+    cout << "hello world!" << endl;
+    return 0;
+}
