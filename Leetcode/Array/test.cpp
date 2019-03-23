@@ -1,36 +1,47 @@
 #include <iostream>
 #include <vector>
-#include <initializer_List>
-class Shape
-{
-public:
-    Shape();                    // 构造函数不能是虚函数
-    virtual void calcArea(double radis) ;
-    virtual ~Shape();           // 虚析构函数
-};
-class Circle : public Shape     // 圆形类
-{
-public:
-    virtual void calcArea(double radis);
-};
-void Shape::calcArea(double radis)
-{ 
-    std::cout << "Shape" << std::endl;
-    
-}
-void Circle::calcArea(double radis)
-{ 
-    std::cout << "Circle" << std::endl;
-    
-}
+#include <string>
+using namespace std;
+
 int main()
 {
-    Shape * shape1 = new Circle();
-    
-
-
+    const char *p = "123";
+    const char *a = "ab";
+    p = a;
+    cout << p << endl;
+    int *c = nullptr;
+    cout << sizeof(c) << endl;
     return 0;
 }
+
+
+// class Shape
+// {
+// public:
+//     Shape();                    // 构造函数不能是虚函数
+//     virtual void calcArea(double radis) ;
+//     virtual ~Shape();           // 虚析构函数
+// };
+// class Circle : public Shape     // 圆形类
+// {
+// public:
+//     virtual void calcArea(double radis);
+// };
+// void Shape::calcArea(double radis)
+// { 
+//     std::cout << "Shape" << std::endl;
+    
+// }
+// void Circle::calcArea(double radis)
+// { 
+//     std::cout << "Circle" << std::endl;
+    
+// }
+// int main()
+// {
+//     Shape * shape1 = new Circle();
+//     return 0;
+// }
 
 // template <class T>
 // struct S
