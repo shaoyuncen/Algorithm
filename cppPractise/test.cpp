@@ -9,7 +9,7 @@ void func()
 }
 // inline max function
 template <class T>
-const T &max(const T &a, const T &b) { return a > b ? a : b; }
+inline const T &max(const T &a, const T &b) { return a > b ? a : b; }
 int main()
 {
 
