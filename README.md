@@ -1,1 +1,1 @@
-# Realize of some basic Algorithm
+# Practise basic algorithm 
