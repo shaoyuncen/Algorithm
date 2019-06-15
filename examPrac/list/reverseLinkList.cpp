@@ -10,7 +10,7 @@ struct ListNode{
 ListNode* reverseList(ListNode* head)
 {//迭代
     ListNode* prev = NULL;
-    while(!head)
+    while(head)
     {
         ListNode* curr = head;
         head = head->next;
