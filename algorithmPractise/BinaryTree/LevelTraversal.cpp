@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <queue>
 using namespace std;
 //一般用两个队列或两个栈来解决
 //3,9,20,null,null,15,7的树    输出  {[3],[20,9], [7,15]}
@@ -72,3 +73,35 @@ vector<vector<int>> levelOrder(TreeNode *root)
     }
     return result;
 }
+
+//3,9,20,null,null,15,7的树    输出  { [15,7],[9,20],[3]}
+vector<vector<int>> levelOrderBottom(TreeNode* root) {
+        vector<vector<int>> result;
+        vector<int> level;
+        queue<TreeNode*> currLevel, nextLevel;
+        currLevel.push(root);
+        while(!currLevel.empty())
+        {
+            TreeNode* currNode = currLevel.front();
+            currLevel.pop();
+            if(currNode)
+            {
+                level.push_back(currNode->val);
+                nextLevel.push(currNode->left);
+                nextLevel.push(currNode->right);
+            }
+            if(currLevel.empty())
+            {
+                swap(currLevel, nextLevel);
+                if(level.size()==0)
+                {
+                    reverse(result.begin(),result.end());
+                    return result;
+                }
+                result.push_back(level);
+                level.clear();
+            }
+        }
+        reverse(result.begin(),result.end());
+        return result;
+    }
