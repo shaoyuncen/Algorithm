@@ -1,11 +1,8 @@
 //找链表中间节点
 #include <iostream>
+#include "list.h"
 using namespace std;
-struct ListNode{
-    ListNode(int val):val(val){}
-    int val;
-    ListNode* next;
-};
+
 
 ListNode* midPoint(ListNode* head)
 {

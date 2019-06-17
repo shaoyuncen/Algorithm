@@ -1,12 +1,9 @@
 #include <iostream>
 #include <unordered_map>
+#include "list.h"
 using namespace std;
 
-struct ListNode{
-    ListNode(int val):val(val){}
-    int val;
-    ListNode* next = NULL;
-};
+
 ListNode* removeDup(ListNode* input)
 {
     ListNode* Search = input;

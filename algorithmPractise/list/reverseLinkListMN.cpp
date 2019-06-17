@@ -1,12 +1,8 @@
 //翻转m,n的链表
 #include <iostream>
-
+#include "list.h"
 using namespace std;
-struct ListNode{
-    ListNode(int val):val(val){}
-    int val;
-    ListNode* next=NULL;
-};
+
 
 ListNode* reverseList(ListNode* head)
 {//迭代

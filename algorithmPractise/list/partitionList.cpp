@@ -1,11 +1,8 @@
 //将比x小的放List左边，比x大的放List右边
 #include <iostream>
+#include "list.h"
 using namespace std;
-struct ListNode{
-    ListNode(int val):val(val){}
-    int val;
-    ListNode* next;
-};
+
 ListNode* partition(ListNode* head, int x)
 {
     if(!head)

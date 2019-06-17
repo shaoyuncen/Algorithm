@@ -1,12 +1,9 @@
 //先交换两个prev节点的next指针的值
 //再交换这个两个节点的next指针的值
 #include <iostream>
+#include "list.h"
 using namespace std;
-struct ListNode{
-    ListNode(int val):val(val){}
-    int val;
-    ListNode* next;
-};
+
 
 ListNode* swapPairs(ListNode* head)
 {
