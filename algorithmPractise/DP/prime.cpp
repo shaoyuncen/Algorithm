@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <map>
 using namespace std;
 int getNthPrime(int n)
 {
@@ -76,12 +77,11 @@ bool isPrime(int N)
 
 int main(int argc, char const *argv[])
 {
-    for(int i = 0; i < 10000000;i++)
-    {
-        if(isPrime(i))
-            cout<<i<<endl;
-    }
-    
+    // for(int i = 0; i < 10000000;i++)
+    // {
+    //     if(isPrime(i))
+    //         cout<<i<<endl;
+    // }
     
     return 0;
 }
