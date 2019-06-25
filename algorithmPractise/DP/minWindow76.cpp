@@ -15,20 +15,22 @@ string minWindow(string s, string t){
     int start = -1, end = -1;
     int i=0,j=0,sLen = s.length(), tLen = t.length();
     bool sig = true;//true 扩展， false收缩
-    
-    while(i<=sLen-tLen&&j<sLen)
+    // for(auto it=T.begin();it!=T.end();++it)
+    //             cout<<it->first<<' ';
+    while((i<=sLen-tLen&&!sig)||(j<sLen&&sig))
     {        
         if(sig)//扩展j
         {
-            while(T.find(s[j])==T.end())
+            while(j<sLen&&T.find(s[j])==T.end())
                 j++;
-            // cout<<s[j]<<' ';
-            if(T[s[j]]>0)//还需要这个字符,=0或小于0都是不需要的，count不变
-                count++;
+            if(j==sLen)
+                continue;
             T[s[j]]--;
+            if(T[s[j]]>=0)//需要这个字符
+                count++;
             if(count==tLen)//凑齐了
             {
-                sig = false;
+                sig = false;//收缩
                 if((j-i+1)<minWindow)
                 {
                     start = i;
@@ -36,38 +38,50 @@ string minWindow(string s, string t){
                     minWindow = j-i+1;
                 }
             }
-            else//没凑齐继续扩展
-                j++;
+            j++;
         }
         else//收缩
         {
-            while(T.find(s[j])==T.end())
-                i++;
-            // cout<<s[i]<<endl;
-            if(T[s[i]]>=0)
-                count--;
-            T[s[i]]++;
-            if(count==tLen)//凑齐了
+            while(i<=sLen-tLen&&T.find(s[i])==T.end())
+                i++;     
+            // cout<<"i: "<<i<<" j: "<<j<<" s[i]: "<<s[i]<<" s[j]: "<<s[j]<<endl;
+            if((j-i)<minWindow)
             {
-                sig = true;
-                if((j-i+1)<minWindow)
+                start = i;
+                end = j-1;
+                minWindow = j-i;
+            }
+            T[s[i]]++;//字典中去掉
+            
+            if(T[s[i]]>0)
+            {
+                sig = true;//停止收缩
+                count--;
+                i++;
+            }
+            else//去掉后仍然不需要该字符
+            {
+                // sig = false;//继续收缩
+                while(i<sLen&&T.find(s[i])==T.end())
+                    i++;  
+                if((j-i)<minWindow)
                 {
                     start = i;
-                    end = j;
-                    minWindow = j-i+1;
+                    end = j-1;
+                    minWindow = j-i;
                 }
-            }
-            else//没凑齐继续收缩
                 i++;
+            }
         }
     }
-    
+    if(start==-1)
+        return "";
     return s.substr(start, end-start+1);
 }
 int main(int argc, char const *argv[])
 {
-    string s("ADOBECODEBANC");
-    string t("ABC");
+    string s("abc");
+    string t("cba");
     string res = minWindow(s, t);
     cout<<"res: "<<res<<endl;
    
