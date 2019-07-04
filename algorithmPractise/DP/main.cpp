@@ -1,6 +1,6 @@
 #include<iostream>
 int main(int argc, char const *argv[])
 {
-    /* code */
+    /* leetcode test*/
     return 0;
 }
