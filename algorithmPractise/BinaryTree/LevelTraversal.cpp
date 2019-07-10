@@ -44,6 +44,7 @@ vector<vector<int>> LevelTraversal(TreeNode *root)
             levelVec.clear();
         }
     }
+    return result;
 }
 ////3,9,20,null,null,15,7的树    输出  {[3],[9,20], [15,7]}
 vector<vector<int>> levelOrder(TreeNode *root)
