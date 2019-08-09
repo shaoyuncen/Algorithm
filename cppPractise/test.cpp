@@ -1,28 +1,33 @@
-#include <iostream>
-
+#include<iostream>
+#include <regex>
+#include <string>
 using namespace std;
-// #define max(a,b) (a>b? a: b) //warning
-void func()
-{
-    static int a = 1;
-    cout << a++ << endl;//when function cal over, variable a won`t be destroyed. and variable a saved in static storage.
+void trim(std::string& str) {
+	if (str.empty())
+		return;
+	int i = 0, j = 0;
+	while (j < str.length()) {
+		if (str[j] == ' ')
+			j++;
+		else
+		{
+			str[i] = str[j];
+			i++; j++;
+		}
+	}
+	str = str.substr(0, i);
 }
-// inline max function
-template <class T>
-inline const T &max(const T &a, const T &b) { return a > b ? a : b; }
-int main()
+int main(int argc, char const *argv[])
 {
-
-
-    // func();//1
-    // func();//2
-
-    // enum
-    // {
-    //     NUM_TURNS = 5
-    // };
-    // int size = 5;
-    // int scores[NUM_TURNS];
-    // cout << NUM_TURNS;
+    string sql = "     SELECT * From User";
+    int len = sql.length();
+	int i = 0;
+	while (sql[i] == ' ')
+		i++;
+	if (i + 5 < len)
+	{
+		transform(sql.begin(), sql.begin()+i+6, sql.begin(), ::tolower);
+        cout<<sql.substr(i, 6)<<endl;
+	}
     return 0;
 }
